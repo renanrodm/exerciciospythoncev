@@ -11,6 +11,13 @@ while True:
     dados[2].append(nota2)
     dados[3].append(media)
     flag = input("Quer continuar? [S/N]: ")
+    while flag not in "NnSs":
+        flag = input("Quer continuar? [S/N]: ")
     if flag in "Nn":
         break
 print("-="*30)
+print(f'{"No.":<4} {"NOME":<15} {"MEDIA"}')
+print("-"*30)
+for numero, alunos in enumerate(dados[0]):
+    print(f'{numero:<4} {alunos:<15} {dados[3][numero]:>.1f}')
+print("-"*30)
