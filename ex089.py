@@ -16,7 +16,6 @@ while True:
     if flag in "Nn":
         break
 print("-="*30)
-
 # estrurura para exibir em tabela os dados solicitados
 print(f'{"No.":<4} {"NOME":<15} {"MEDIA"}')
 print("-"*30)
