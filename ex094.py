@@ -29,7 +29,7 @@ while True:
     if opc in 'Nn':
         break
 print('-='*30)
-print(pessoas)
+
 #estrutura de exibição básica dos itens A e B
 print(f'A) Ao todo temos {tot_pessoas} pessoas cadastradas.')
 media_idade = soma_idade/tot_pessoas
@@ -46,3 +46,7 @@ for i, v in enumerate(pessoas):
 print(f'C) As mulheres cadastradas foram {mulheres}')
 
 # estrutura para exibir pessoas com idade acima da média
+print('D) Lista das pessoas que estão acima da média: ')
+for i, v in enumerate(idade_maior_media):
+    print(f'    nome = {idade_maior_media[i]["nome"]}; sexo = {idade_maior_media[i]["sexo"]}; idade = {idade_maior_media[i]["idade"]}')
+print('<< ENCERRADO >>')
