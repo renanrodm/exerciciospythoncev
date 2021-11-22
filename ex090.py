@@ -4,12 +4,13 @@ aluno_dados = dict()
 
 aluno_dados['nome'] = str(input('Nome: '))
 aluno_dados['media'] = float(input('Media: '))
+if aluno_dados['media'] >= 7:
+    aluno_dados['situação'] = 'APROVADO'
+elif 5 <= aluno_dados['media'] < 7:
+    aluno_dados['situação'] = 'RECUPERAÇÃO'
+elif aluno_dados['media'] < 5:
+    aluno_dados['situação'] = 'REPROVADO!'
 
 print(f'- nome é igual a {aluno_dados["nome"]}')
 print(f'- média é igual a {aluno_dados["media"]}')
-if aluno_dados['media'] >= 7:
-    print(f'- situação de APROVAÇÃO! Parabéns!')
-elif 5 <= aluno_dados['media'] < 7:
-    print(f'- situação de RECUPERAÇÃO!')
-elif aluno_dados['media'] < 5:
-    print(f'- situação de REPROVAÇÃO!')
+print(f'- situação é igual {aluno_dados["situação"]}')
