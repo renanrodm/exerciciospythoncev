@@ -9,11 +9,12 @@ jogo = {
     'jogador4': random.randint(1, 6),
 }
 ranking = list()
-print('Valores sorteados: ')
-for k, v in jogo.items():
-    print(f'{k} tirou {v} no dado.')
-    sleep(0.3)
+
+for keys, values in jogo.items():
+    print(f'{keys} tirou {values} no dado.')
+
 ranking = sorted(jogo.items(), key=itemgetter(1), reverse=True)
+
 print('-='*30)
-for i, v in enumerate(ranking):
-    print(f'{i+1}º lugar: {v[0]} com {v[1]}')
+for i, j in enumerate(ranking):
+    print(f'{i+1}º: {j[0]} com {j[1]}')
