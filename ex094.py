@@ -13,7 +13,8 @@ while True:
         print('ERRO! Por favor, digite apenas M ou F.')
         individuos['sexo'] = str(input('Sexo [M/F]: '))
     individuos['idade'] = int(input('Idade: '))
-
+    pessoas.append(individuos.copy())
+    print('-='*30)
     # estrutura de confirmação para continuação do programa
     opc = str(input('Quer continuar? [S/N]: '))
     while opc not in 'SsNn':
