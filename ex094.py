@@ -3,12 +3,14 @@ A) Quantas pessoas foram cadastradas
 B) A média de idade do grupo
 C) Uma lista com todas as mulheres.
 D) Uma lista com todas as pessoas com idade acima da média'''
+
 pessoas = list()
 individuos = dict()
 mulheres = list()
 idade_maior_media = list()
 tot_pessoas = 0
 soma_idade = 0
+
 while True:
     # estrutura para armazenamento dos dados
     individuos['nome'] = str(input('Nome: '))
@@ -43,6 +45,7 @@ for i, v in enumerate(pessoas):
 
     if pessoas[i]['idade'] > media_idade: # adicionado pessoas acima da media de idade para uma lista
         idade_maior_media.append(v.copy())
+# estrutura para exibir a lista de mulheres cadastradas
 print(f'C) As mulheres cadastradas foram {mulheres}')
 
 # estrutura para exibir pessoas com idade acima da média
