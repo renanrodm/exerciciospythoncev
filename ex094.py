@@ -59,5 +59,4 @@ for p in pessoas:
         for k, v in p.items():
             print(f'    {k} = {v}; ', end='')
         print('')
-
 print('<< ENCERRADO >>')
