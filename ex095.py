@@ -27,11 +27,11 @@ print("-="*30)
 
 # estrutura de exibição dos dados de todos os jogadores
 
-print(f'{"Cód.":<5}{"Nome":<15}{"Gols":<25}{"Total":>}')
+print(f'{"Cód.":<5}{"Nome":<20}{"Gols":<25}{"Total":>}')
 
 print("-"*60)
 for i, j in enumerate(time):
-    print(f'{i:^4} {j["nome"]:<15}{str(j["gols"]):<25}{j["total"]:<}')
+    print(f'{i:^4} {j["nome"]:<20}{str(j["gols"]):<25}{j["total"]:<}')
 print("-"*60)
 
 # estrutura de exibição dos dados individuais
