@@ -5,16 +5,14 @@ time = list()
 # estrutura de armazenamento dos dados
 
 while True:
-    tot_gols = 0
     jogadores['nome'] = str(input("Nome do jogador: "))
     partidas = int(input(f'Quantas partidas {jogadores["nome"]} jogou? '))
 
     jogadores['gols'] = list()
     for c in range(0, partidas):
         gols = int(input(f'     Quantos gols na partida {c+1}? '))
-        tot_gols += gols
         jogadores['gols'].append(gols)
-    jogadores['total'] = tot_gols
+    jogadores['total'] = sum(jogadores['gols'])
     time.append(jogadores.copy())
 
     while True:
