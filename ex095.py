@@ -25,9 +25,20 @@ while True:
         break
 print("-*"*30)
 
-# estrutura de exibição
+# estrutura de exibição dos dados de todos os jogadores
 
 print("-"*30)
 for i, j in enumerate(time):
     print(f'{i:<2} {j["nome"]:<15} {j["gols"]} {j["total"]:<5}')
 print("-"*30)
+
+# estrutura de exibição dos dados individuais
+
+while True:
+    opc = int(input('Mostrar dados de qualquer jogador? (999 para parar): '))
+    if opc == 999:
+        break
+    print(f' -- Levantamento de dados do jogador {time[opc]["nome"]}')
+    for i, v in enumerate(time):
+        print(f'   No jogo {i+1} fez {time[opc]["total"]} gols.')
+    print("-" * 30)
