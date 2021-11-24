@@ -25,29 +25,36 @@ print("-="*30)
 
 # estrutura de exibição dos dados de todos os jogadores
 
-print(f'{"Cód.":<5}{"Nome":<20}{"Gols":<25}{"Total":>}')
 
-print("-"*60)
-for i, j in enumerate(time):
-    print(f'{i:^4} {j["nome"]:<20}{str(j["gols"]):<25}{j["total"]:<}')
-print("-"*60)
+print(f'{"cod"} ', end='') #estrutura para gerar cabeçalho a partir das chaves
+for k in jogadores.keys():
+    print(f'{k:<15}', end='')
+print()
 
-# estrutura de exibição dos dados individuais
+print("-"*40)
+
+for i, v in enumerate(time): #estrutura de exibição dos dados de todos os jogadores
+    print(f'{i:>3} ', end='')
+    for d in time[i].values():
+        print(f'{str(d):<15}', end='')
+    print()
+print("-"*40)
+
+# estrutura de exibição dos dados individuais com validação dos dados
 
 while True:
 
-    while True:
-        opc = int(input('Mostrar dados de qual jogador? (999 para parar): '))
-        if 0 <= opc < len(time) or opc == 999:
-            break
-        print(f'ERRO! Não existe jogador com o código {opc}. Por favor, digite um numero entre 0 e {len(time)-1}.')
+    opc = int(input('Mostrar dados de qual jogador? (999 para parar): '))
     if opc == 999:
         break
 
-    print("-" * 60)
-    print(f'-- Levantamento de dados do jogador {time[opc]["nome"]}')
-    for i, g in enumerate(time[opc]['gols']):
-        print(f'    No jogo {i+1} fez {g} gols.')
-    print("-" * 60)
+    if opc >= len(time):
+        print(f'ERRO! Não existe jogador com o código {opc}. Por favor, digite um numero entre 0 e {len(time)-1}.')
+    else:
+        print("-" * 40)
+        print(f'-- Levantamento de dados do jogador {time[opc]["nome"]}')
+        for i, g in enumerate(time[opc]['gols']):
+            print(f'    No jogo {i+1} fez {g} gols.')
+        print("-" * 40)
 
-print("<< PROGRAMA ENCERRADO >>")
+print("<< VOLTE SEMPRE >>")
