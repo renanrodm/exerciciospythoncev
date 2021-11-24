@@ -27,27 +27,29 @@ print("-="*30)
 
 # estrutura de exibição dos dados de todos os jogadores
 
-print(f'{"Cód.":>2}{"Nome":<10} {"Gols"} {"Total":>15}')
+print(f'{"Cód.":<5}{"Nome":<15}{"Gols":<25}{"Total":>}')
 
-print("-"*30)
+print("-"*60)
 for i, j in enumerate(time):
-    print(f'{i:>4}{j["nome"]:<10}{j["gols"]}{j["total"]:<}')
-print("-"*30)
+    print(f'{i:^4} {j["nome"]:<15}{str(j["gols"]):<25}{j["total"]:<}')
+print("-"*60)
 
 # estrutura de exibição dos dados individuais
 
 while True:
+
     while True:
         opc = int(input('Mostrar dados de qual jogador? (999 para parar): '))
         if 0 <= opc < len(time) or opc == 999:
             break
-        print(f'Não existe jogador com o código {opc}.')
+        print(f'ERRO! Não existe jogador com o código {opc}. Por favor, digite um numero entre 0 e {len(time)-1}.')
     if opc == 999:
         break
 
-    print(f' -- Levantamento de dados do jogador {time[opc]["nome"]}')
+    print("-" * 60)
+    print(f'-- Levantamento de dados do jogador {time[opc]["nome"]}')
     for i, g in enumerate(time[opc]['gols']):
-        print(f'No jogo {i+1} fez {g} gols.')
-    print("-" * 30)
+        print(f'    No jogo {i+1} fez {g} gols.')
+    print("-" * 60)
 
 print("<< PROGRAMA ENCERRADO >>")
