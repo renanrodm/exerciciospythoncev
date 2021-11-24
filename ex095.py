@@ -23,13 +23,15 @@ while True:
             break
     if resp in "N":
         break
-print("-"*30)
+print("-="*30)
 
 # estrutura de exibição dos dados de todos os jogadores
 
+print(f'{"Cód.":>2} {"Nome":<10} {"Gols"} {"Total":>15}')
+
 print("-"*30)
 for i, j in enumerate(time):
-    print(f'{i:<2} {j["nome"]:<15} {j["gols"]} {j["total"]:<5}')
+    print(f'{i:>4}  {j["nome"]:<10} {j["gols"]} {j["total"]}')
 print("-"*30)
 
 # estrutura de exibição dos dados individuais
@@ -40,7 +42,7 @@ while True:
         opc = int(input('Mostrar dados de qual jogador? (999 para parar): '))
         if 0 <= opc < len(time) or opc == 999:
             break
-        print(f'Não existe jogador com o código {opc}')
+        print(f'Não existe jogador com o código {opc}.')
     if opc == 999:
         break
 
