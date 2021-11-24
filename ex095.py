@@ -23,7 +23,7 @@ while True:
             break
     if resp in "N":
         break
-print("-*"*30)
+print("-"*30)
 
 # estrutura de exibição dos dados de todos os jogadores
 
@@ -35,10 +35,17 @@ print("-"*30)
 # estrutura de exibição dos dados individuais
 
 while True:
-    opc = int(input('Mostrar dados de qualquer jogador? (999 para parar): '))
+    print("-" * 30)
+    while True:
+        opc = int(input('Mostrar dados de qual jogador? (999 para parar): '))
+        if 0 <= opc < len(time) or opc == 999:
+            break
+        print(f'Não existe jogador com o código {opc}')
     if opc == 999:
         break
+
     print(f' -- Levantamento de dados do jogador {time[opc]["nome"]}')
     for i, v in enumerate(time):
         print(f'   No jogo {i+1} fez {time[opc]["total"]} gols.')
     print("-" * 30)
+print("<< PROGRAMA ENCERRADO >>")
