@@ -27,17 +27,16 @@ print("-="*30)
 
 # estrutura de exibição dos dados de todos os jogadores
 
-print(f'{"Cód.":>2} {"Nome":<10} {"Gols"} {"Total":>15}')
+print(f'{"Cód.":>2}{"Nome":<10} {"Gols"} {"Total":>15}')
 
 print("-"*30)
 for i, j in enumerate(time):
-    print(f'{i:>4}  {j["nome"]:<10} {j["gols"]} {j["total"]}')
+    print(f'{i:>4}{j["nome"]:<10}{j["gols"]}{j["total"]:<}')
 print("-"*30)
 
 # estrutura de exibição dos dados individuais
 
 while True:
-    print("-" * 30)
     while True:
         opc = int(input('Mostrar dados de qual jogador? (999 para parar): '))
         if 0 <= opc < len(time) or opc == 999:
@@ -47,7 +46,8 @@ while True:
         break
 
     print(f' -- Levantamento de dados do jogador {time[opc]["nome"]}')
-    for i, v in enumerate(time):
-        print(f'   No jogo {i+1} fez {time[opc]["total"]} gols.')
+    for i, g in enumerate(time[opc]['gols']):
+        print(f'No jogo {i+1} fez {g} gols.')
     print("-" * 30)
+
 print("<< PROGRAMA ENCERRADO >>")
