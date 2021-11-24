@@ -3,6 +3,7 @@
 jogador = dict()
 partidas = list()
 
+# estrutura de armazenamento de dados
 jogador['nome'] = str(input('Nome do jogador: '))
 tot = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
 
@@ -11,6 +12,7 @@ for c in range(0, tot):
 jogador['gols'] = partidas[:]
 jogador['total'] = sum(partidas)
 
+# estruturas de exibição dos dados
 print('-='*30)
 
 print(jogador)
