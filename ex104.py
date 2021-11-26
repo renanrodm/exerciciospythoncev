@@ -2,14 +2,14 @@
 Ex: n = leiaInt('Digite um n')'''
 
 
-def LeiaInt(valor):
+def LeiaInt(str):
     cores = {'vermelho': '\033[0:31m', 'limpa': '\033[0:0m'}
     while True:
-        num = input(valor)
-        if num.isnumeric():
+        valor = input(str)
+        if valor.isnumeric():
             break
         print(f'{cores["vermelho"]}ERRO! Digite um número inteiro válido.{cores["limpa"]}')
-    return num
+    return valor
 
 
 n = LeiaInt('Digite um número: ')
