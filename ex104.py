@@ -7,9 +7,8 @@ def LeiaInt(str):
     while True:
         valor = input(str)
         if valor.isnumeric():
-            break
+            return valor
         print(f'{cores["vermelho"]}ERRO! Digite um número inteiro válido.{cores["limpa"]}')
-    return valor
 
 
 n = LeiaInt('Digite um número: ')
