@@ -2,6 +2,7 @@
 
 O programa deverá ser capaz de mostrar a ficha do jogador, mesmo que algum dado não tenha sido informado corretamente.'''
 
+
 def ficha(j="<<desconhecido>>", g=0):
     print(f'O jogador {j} fez {g} gol(s) no campeonato.')
 
@@ -9,11 +10,25 @@ def ficha(j="<<desconhecido>>", g=0):
 jogador = input('Nome do jogador: ')
 gols = input('Numero de gols: ')
 
-if len(jogador) != 0 and len(gols) != 0:
-    ficha(jogador, gols)
-elif len(jogador) == 0:
+
+if jogador != "" and gols != "":
+    if jogador.isalpha() and gols.isnumeric():
+        ficha(jogador, int(gols))
+    else:
+        ficha()
+
+elif jogador != "" and gols == "":
+    if jogador.isalpha():
+        ficha(jogador)
+    else:
+        ficha()
+
+elif jogador == "" and gols != "":
+    if gols.isnumeric():
+        ficha(g=int(gols))
+    else:
+        ficha()
+
+else:
     ficha()
-elif len(gols) == 0:
-    ficha(jogador)
-elif len(jogador) == 0 and len(gols) == 0:
-    ficha()
+
