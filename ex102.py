@@ -11,15 +11,17 @@ def fatorial(num, show=False):
     """
     if show:
         print(f'{num}', end=' ')
-        for f in range(num - 1, 0, -1):
-            print(f'x {f}', end=' ')
-            num *= f
+        f = 1
+        for c in range(num - 1, 0, -1):
+            print(f'x {c}', end=' ')
+            f *= c
         print(f'= {num}')
     else:
-        for f in range(num - 1, 0, -1):
-            num *= f
-        return print(num)
+        f = 1
+        for c in range(num, 0, -1):
+            f *= c
+        return print(f)
 
 
-fatorial(7, show=True)
+fatorial(5, show=True)
 # help(fatorial)
