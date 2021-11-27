@@ -7,3 +7,14 @@
 - A situação (opcional)
 
 Adicione também as docstrings da função.'''
+
+def notas(*nts, sit=False):
+    dados = dict()
+    dados['total'] = len(nts)
+    dados['maior'] = max(nts)
+    dados['menor'] = min(nts)
+    dados['média'] = sum(nts)/len(nts)
+    return dados
+
+resp = notas(5.5, 9.5, 10, 6.5)
+print(resp)
