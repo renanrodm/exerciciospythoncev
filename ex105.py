@@ -15,29 +15,20 @@ def notas(*nts, sit=False):
     :param sit: valor opcional, indicando se deve ou não adicionar a situação
     :return: dicionário com várias informações sobre a situação da turma
     """
-    soma = 0
-    dados = dict()
-    dados['total'] = len(nts)
-    for i, c in enumerate(nts):
-        soma += c
-        if i == 0:
-            dados['maior'] = c
-            dados['menor'] = c
-        if c > dados['maior']:
-            dados['maior'] = c
-        elif c < dados['menor']:
-            dados['menor'] = c
-    dados['media'] = soma/dados['total']
+    r = dict()
+    r['total'] = len(nts)
+    r['maior'] = max(nts)
+    r['menor'] = min(nts)
+    r['media'] = sum(nts)/len(nts)
 
     if sit:
-        if dados['media'] >= 7:
-            dados['situação'] = 'BOA'
-        elif 5 <= dados['media'] < 7:
-            dados['situação'] = 'RAZOÁVEL'
+        if r['media'] >= 7:
+            r['situação'] = 'BOA'
+        elif r['media'] >= 5:
+            r['situação'] = 'RAZOÁVEL'
         else:
-            dados['situação'] = 'RUIM'
-
-    return dados
+            r['situação'] = 'RUIM'
+    return r
 
 
 #Programa Principal
