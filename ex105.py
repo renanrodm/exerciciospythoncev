@@ -40,5 +40,6 @@ def notas(*nts, sit=False):
     return dados
 
 
+#Programa Principal
 resp = notas(3.5, 2, 6.5, 2, 7, 4, sit=True)
 print(resp)
