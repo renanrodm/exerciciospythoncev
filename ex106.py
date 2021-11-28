@@ -3,41 +3,38 @@
 OBS: use cores.'''
 from time import sleep
 
+c = [
+    '\033[0:0m',  # 0 -> reset cores
+    '\033[0:97:41m',  # 1 -> vermelho
+    '\033[0:97:102m',  # 2 -> verde claro
+    '\033[0:97:104m',  # 3 -> azul claro
+    '\033[0:30:107m'   # 4 -> branco
+]
 
-def escreva(msg):
-    print(f'~' * (len(msg)+ 4))
+
+def escreva(msg, cor=0):
+    tam = len(msg) + 4
+    print(c[cor], end='')
+    print(f'~' * tam)
     print(f'  {msg}')
-    print('~' * (len(msg) + 4))
+    print('~' * tam)
+    print(c[0], end='')
+    sleep(1)
 
 
 def consulta_pyhelp(arg):
-
-    print(f'{estilos["cabeçalho_consulta"]}', end='')
-    escreva(f"Acessando o manual do comando '{arg}'")
-    print(f'{estilos["reset"]}', end='')
-    sleep(1)
-    print(f'{estilos["conteudo_pyhelp"]}', end='')
+    escreva(f"Acessando o manual do comando '{arg}'", 3)
+    print(c[4], end='')
     help(arg)
-    print(f'{estilos["reset"]}', end='')
-
-estilos = {
-'reset': '\033[0:0m',
-'cabeçalho_principal': '\033[0:97:102m',
-'cabeçalho_consulta': '\033[0:97:44m',
-'conteudo_pyhelp': '\033[0:30:107m',
-'fim': '\033[0:97:41m'
-}
-
+    print(c[0], end='')
+    sleep(2)
 
 while True:
-    print(f'{estilos["cabeçalho_principal"]}', end='')
-    escreva(f'SISTEMA DE AJUDA PyHELP')
-    print(f'{estilos["reset"]}', end='')
+    escreva(f'SISTEMA DE AJUDA PyHELP', 2)
     opc = input('Função ou biblioteca > ').strip()
     if opc in 'fim':
         break
-    consulta_pyhelp(opc)
+    else:
+        consulta_pyhelp(opc)
 
-print(f'{estilos["fim"]}', end='')
-escreva('ATÉ LOGO!')
-
+escreva('ATÉ LOGO!', 1)
