@@ -9,12 +9,21 @@
 Adicione também as docstrings da função.'''
 
 def notas(*nts, sit=False):
+    soma = 0
     dados = dict()
     dados['total'] = len(nts)
-    dados['maior'] = max(nts)
-    dados['menor'] = min(nts)
-    dados['média'] = sum(nts)/len(nts)
+    for i, c in enumerate(nts):
+        soma += c
+        if i == 0:
+            dados['maior'] = c
+            dados['menor'] = c
+        if c > dados['maior']:
+            dados['maior'] = c
+        elif c < dados['menor']:
+            dados['menor'] = c
+    dados['média'] = soma/dados['total']
     return dados
+
 
 resp = notas(5.5, 9.5, 10, 6.5)
 print(resp)
