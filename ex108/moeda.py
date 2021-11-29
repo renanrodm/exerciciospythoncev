@@ -1,24 +1,22 @@
-def moeda(preço):
-    format = str(preço)
-    format = f'R$' + format.replace(".", ",")
-    return format
-
-
-def metade(n):
-    res = n / 2
+def metade(preço=0):
+    res = preço / 2
     return res
 
 
-def dobro(n):
-    res = n * 2
+def dobro(preço=0):
+    res = preço * 2
     return res
 
 
-def aumentar(preço, taxa):
+def aumentar(preço=0, taxa=0):
     res = preço * (1 + (taxa/100))
     return res
 
 
-def diminuir(preço, taxa):
+def diminuir(preço = 0, taxa=0):
     res = preço * (1 - (taxa/100))
     return res
+
+
+def moeda(preço = 0, moeda="R$"):
+    return f'{moeda}{preço:.2f}'.replace(".", ",")
