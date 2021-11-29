@@ -1,11 +1,18 @@
 def metade(n):
-    return n / 2
+    res = n / 2
+    return res
+
 
 def dobro(n):
-    return n * 2
+    res = n * 2
+    return res
 
-def aumentar(n, t):
-    return n * (1 + (t/100))
 
-def diminuir(n, t):
-    return n * (1 - (t/100))
+def aumentar(preço, taxa):
+    res = preço * (1 + (taxa/100))
+    return res
+
+
+def diminuir(preço, taxa):
+    res = preço * (1 - (taxa/100))
+    return res
