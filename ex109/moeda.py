@@ -1,29 +1,27 @@
 def metade(preço=0, formatação=False):
     res = preço / 2
-    if formatação:
-        res = moeda(res)
-    return res
+    return res if not formatação else moeda(res)
 
 
 def dobro(preço=0, formatação=False):
     res = preço * 2
-    if formatação:
-        res = moeda(res)
-    return res
+    return res if not formatação else moeda(res)
 
 
 def aumentar(preço=0, taxa=0, formatação=False):
     res = preço * (1 + (taxa / 100))
     if formatação:
-        res = moeda(res)
-    return res
+        return moeda(res)
+    else:
+        return res
 
 
 def diminuir(preço=0, taxa=0, formatação=False):
     res = preço * (1 - (taxa / 100))
     if formatação:
-        res = moeda(res)
-    return res
+        return moeda(res)
+    else:
+        return res
 
 
 def moeda(preço=0, moeda="R$"):
