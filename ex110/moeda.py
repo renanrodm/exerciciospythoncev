@@ -3,11 +3,11 @@ def resumo(preço=0, aumento=10, redução=5):
     print('-'*30)
     print(f'{"RESUMO DO VALOR".center(30)}')
     print('-'*30)
-    print(f'{"Preço analisado: ":<20}', f'{moeda(preço):<}')
-    print(f'{"Dobro do preço:":<20}', f'{dobro(preço, True):<}')
-    print(f'{"Metade do preço:":<20}', f'{metade(preço, True):<}')
-    print(f'{f"{aumento}% de aumento:":<20}', f'{aumentar(preço, aumento, True):<}')
-    print(f'{f"{redução}% de redução:":<20}', f'{diminuir(preço, redução, True):<}')
+    print(f'Preço analisado:  \t{moeda(preço)}')
+    print(f'Dobro do preço: \t{dobro(preço, True)}')
+    print(f'Metade do preço: \t{metade(preço, True)}')
+    print(f'{aumento}% de aumento: \t{aumentar(preço, aumento, True)}')
+    print(f'{redução}% de redução: \t{diminuir(preço, redução, True)}')
     print('-' * 30)
 
 
