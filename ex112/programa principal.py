@@ -1,6 +1,5 @@
-from utilidadescev import moeda
+from utilidadescev import moeda, dado
 
 
-p = moeda.leiaDinheiro('Digite o preço: R$ ')
-#print(p, type(p))
+p = dado.leiaDinheiro('Digite o preço: R$ ')
 moeda.resumo(p, 80, 35)

@@ -1,23 +1,13 @@
-def leiaDinheiro(num):
-    var = input(num)
-    if "," in var:
-        var = var.replace(",", ".")
-        return float(var)
-    else:
-        return float(var)
-
-
 def resumo(preço=0, aumento=10, redução=5):
-        print('-'*30)
-        print(f'{"RESUMO DO VALOR".center(30)}')
-        print('-'*30)
-        print(f'Preço analisado:  \t{moeda(preço)}')
-        print(f'Dobro do preço: \t{dobro(preço, True)}')
-        print(f'Metade do preço: \t{metade(preço, True)}')
-        print(f'{aumento}% de aumento: \t{aumentar(preço, aumento, True)}')
-        print(f'{redução}% de redução: \t{diminuir(preço, redução, True)}')
-        print('-' * 30)
-
+    print('-' * 30)
+    print(f'{"RESUMO DO VALOR".center(30)}')
+    print('-' * 30)
+    print(f'Preço analisado:  \t{moeda(preço)}')
+    print(f'Dobro do preço: \t{dobro(preço, True)}')
+    print(f'Metade do preço: \t{metade(preço, True)}')
+    print(f'{aumento}% de aumento: \t{aumentar(preço, aumento, True)}')
+    print(f'{redução}% de redução: \t{diminuir(preço, redução, True)}')
+    print('-' * 30)
 
 
 def metade(preço=0, formatado=False):
