@@ -1,6 +1,8 @@
 from ex115.lib.interface import *
 from time import sleep
 
+
+
 while True:
     resposta = menu(["Ver pessoas cadastradas", "Cadastrar nova Pessoa", "Sair do Sistema"])
     if resposta == 1:
